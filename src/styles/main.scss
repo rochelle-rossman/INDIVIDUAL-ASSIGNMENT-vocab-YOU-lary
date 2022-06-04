@@ -8,3 +8,12 @@ body {
   text-align: center;
   margin-top: 100px;
 }
+
+#cards {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+}
