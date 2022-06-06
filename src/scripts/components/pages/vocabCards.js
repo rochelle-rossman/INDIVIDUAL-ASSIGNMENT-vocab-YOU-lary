@@ -9,7 +9,7 @@ const emptyVocab = () => {
 const showVocabCards = (array) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-author-btn">Add A Vocabulary Word</button>';
+  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add--btn">Add A Vocabulary Word</button>';
 
   renderToDOM('#add-button', btnString);
 
