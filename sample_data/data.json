@@ -70,4 +70,13 @@
   "language": "English",
   "time submitted": "",
   "uid": ""
+}, {
+
+"definition": "An absolute value not assigned to a variable. Examples include 1, 3.1415927, true.",
+"firebaseKey": "-N4-aZ2bkFze-VvFC7_1",
+"language": "Javascript",
+"timeSubmitted": "2022-06-07T23:57:39.701Z",
+"title": "Literal",
+"uid" : "sEO48g2hT6ZcBGcYZbKth9XTQoe2"
+
 }]
