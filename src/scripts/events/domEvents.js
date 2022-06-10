@@ -1,6 +1,10 @@
-import { deleteWord, getSingleWord, getWords } from '../../api/vocabData';
+import {
+  deleteWord, getSingleWord, getWords
+} from '../../api/vocabData';
 import addVocabForm from '../components/forms/addVocab';
-import { showVocabCards } from '../components/pages/vocabCards';
+import viewSingleWord from '../components/pages/viewSingleWord';
+import { showVocabCards } from '../components/pages/showVocabCards';
+import clearDom from '../helpers/clearDom';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -22,16 +26,36 @@ const domEvents = (uid) => {
       });
     }
 
+    if (e.target.id.includes('view-word')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleWord(firebaseKey).then((wordObject) => viewSingleWord(wordObject));
+    }
+
     if (e.target.id.includes('all')) {
       getWords(uid).then((wordsArray) => {
         showVocabCards(wordsArray);
       });
-      // } else if (e.target.id) {
-      //   const lang = words.filter(
-      //     (taco) => taco.language.toLowerCase()
-      //   )
-      // }
     }
+
+    const languageFilter = (language) => {
+      if (e.target.id.includes(`${language}`)) {
+        clearDom();
+        const langArray = [];
+        getWords(uid).then((cardArray) => {
+          cardArray.forEach((card) => {
+            if (card.language.toLowerCase() === `${language}`) {
+              langArray.push(card);
+              showVocabCards(langArray);
+            }
+          });
+        });
+      }
+    };
+
+    languageFilter('javascript');
+    languageFilter('python');
+    languageFilter('html');
+    languageFilter('css');
   });
 };
 

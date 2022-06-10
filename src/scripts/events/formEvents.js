@@ -1,5 +1,5 @@
 import { createVocab, getWords, updateWord } from '../../api/vocabData';
-import { showVocabCards } from '../components/pages/vocabCards';
+import { showVocabCards } from '../components/pages/showVocabCards';
 // import { showVocabCards } from '../components/pages/vocabCards';
 
 const formEvents = (uid) => {

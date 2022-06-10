@@ -22,7 +22,8 @@ const addVocabForm = (obj = {}) => {
         <select class="form-select" id="language">
         <option selected>Open this select menu</option>
         <option value="Javascript">Javascript</option>
-        <option value="HTML/CSS">HTML/CSS</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
         <option value="Python">Python</option>
         </select>
         <label for="floatingSelect">Language/Tech</label>
