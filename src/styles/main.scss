@@ -3,8 +3,8 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: black;
+  color: white;
   text-align: center;
 }
 
@@ -12,12 +12,26 @@ body {
   width: 90%;
   display: flex;
   flex-flow: row wrap;
-  text-align: center;
   margin: auto;
   justify-content: center;
+  color: black;
 }
 
 #logo {
   width: 75px;
   height: 75px;
 }
+
+#filter-buttons {
+  margin-top: 5px;
+}
+
+#add--btn {
+  margin: 5px;
+}
+
+form {
+  margin:auto;
+  width: 70%;
+}
+
