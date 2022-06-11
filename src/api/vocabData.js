@@ -6,7 +6,7 @@ const dbUrl = firebaseConfig.databaseURL;
 const getWords = (uid) => new Promise((resolve, reject) => {
   axios
     .get(
-      `${dbUrl}//words.json?orderBy="uid"&equalTo="${uid}"`
+      `${dbUrl}/words.json?orderBy="uid"&equalTo="${uid}"`
     )
     .then((response) => {
       if (response.data) {
