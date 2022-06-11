@@ -9,15 +9,11 @@ const emptyVocab = () => {
 const showVocabCards = (array) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add--btn">Add A Vocabulary Word</button>';
-
-  renderToDOM('#add-button', btnString);
-
-  const filterBtnString = `<button type="button" class="btn btn-primary btn-lg" id="html">HTML</button>
-  <button type="button" class="btn btn-primary btn-lg" id="css">CSS</button>
-    <button type="button" class="btn btn-primary btn-lg" id="javascript">JavaScript</button>
-    <button type="button" class="btn btn-primary btn-lg"id="python">Python</button>
-    <button type="button" class="btn btn-primary btn-lg"id="all">All</button>`;
+  const filterBtnString = `<button type="button" class="btn btn-outline-light" id="html">HTML</button>
+  <button type="button" class="btn btn-outline-light" id="css">CSS</button>
+    <button type="button" class="btn btn-outline-light" id="javascript">JavaScript</button>
+    <button type="button" class="btn btn-outline-light"id="python">Python</button>
+    <button type="button" class="btn btn-outline-light"id="all">All</button>`;
 
   renderToDOM('#filter-buttons', filterBtnString);
 
@@ -29,9 +25,10 @@ const showVocabCards = (array) => {
         <h3 class="card-title">${word.title}</h3>
         <p class="card-text"><b>Definition:</b> ${word.definition}</p>
         <p class="card-text"><b>Language/Tech:</b> ${word.language}</p>
-        <i class="btn btn-success fas fa-eye" id="view-word--${word.firebaseKey}"></i>
-        <i class="fas fa-edit btn btn-info" id="edit-word--${word.firebaseKey}"></i>
-        <i class="btn btn-danger fas fa-trash-alt" id="delete-word-btn--${word.firebaseKey}"></i>
+        <p>${word.timeSubmitted}</p>
+        <i class="btn btn-outline-success fas fa-eye" id="view-word--${word.firebaseKey}"></i>
+        <i class="fas fa-edit btn btn-outline-warning" id="edit-word--${word.firebaseKey}"></i>
+        <i class="btn btn-outline-danger fas fa-trash-alt" id="delete-word-btn--${word.firebaseKey}"></i>
       </div>
     </div>`;
     });

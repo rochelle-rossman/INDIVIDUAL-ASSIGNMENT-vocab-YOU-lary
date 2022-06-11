@@ -1,7 +1,8 @@
 import clearDom from '../../helpers/clearDom';
 import renderToDOM from '../../helpers/renderToDom';
+// import selectLanguage from './selectLanguage';
 
-const addVocabForm = (obj = {}) => {
+const addVocabForm = (uid, obj = {}) => {
   clearDom();
   const domString = ` <form id=${
     obj.firebaseKey ? `update-word--${obj.firebaseKey}` : 'submit-word'
@@ -34,5 +35,6 @@ const addVocabForm = (obj = {}) => {
     </form>`;
 
   renderToDOM('#form-container', domString);
+  // selectLanguage(uid, obj);
 };
 export default addVocabForm;
