@@ -34,6 +34,25 @@ const navBar = () => {
               </ul>
             </li>
           </ul>
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter Entries
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#" id="css">CSS</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="html">HTML</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="javascript">JavaScript</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="python">Python</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="all">All</a></li>
+                
+              </ul>
+            </li>
+          </ul>
           <form class="d-flex" role="search" id="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
           </form>
