@@ -1,7 +1,6 @@
-import { getWords } from '../../api/vocabData';
+import { getWords, getWordsByLanguage } from '../../api/vocabData';
 import { emptyVocab, showVocabCards } from '../components/pages/showVocabCards';
 import addVocabForm from '../components/forms/addVocab';
-import clearDom from '../helpers/clearDom';
 import addCategoryForm from '../components/forms/addCategoryForm';
 
 const navEvents = (uid) => {
@@ -40,25 +39,12 @@ const navEvents = (uid) => {
       });
     }
 
-    const languageFilter = (language) => {
-      if (e.target.id.includes(`${language}`)) {
-        clearDom();
-        const langArray = [];
-        getWords(uid).then((cardArray) => {
-          cardArray.forEach((card) => {
-            if (card.language.toLowerCase() === `${language}`) {
-              langArray.push(card);
-              showVocabCards(langArray);
-            }
-          });
-        });
-      }
-    };
-
-    languageFilter('javascript');
-    languageFilter('python');
-    languageFilter('html');
-    languageFilter('css');
+    if (e.target.id.includes('filter-language')) {
+      const [, language] = e.target.id.split('--');
+      getWordsByLanguage(language).then((langArray) => {
+        showVocabCards(langArray);
+      });
+    }
   });
 
   document.querySelector('#navigation').addEventListener('keyup', (e) => {

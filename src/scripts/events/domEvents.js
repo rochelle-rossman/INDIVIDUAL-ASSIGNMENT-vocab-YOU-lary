@@ -14,7 +14,7 @@ const domEvents = (uid) => {
 
     if (e.target.id.includes('edit-word')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleWord(firebaseKey).then((wordObject) => addVocabForm(wordObject));
+      getSingleWord(firebaseKey).then((wordObject) => addVocabForm(uid, wordObject));
     }
 
     if (e.target.id.includes('delete-word')) {

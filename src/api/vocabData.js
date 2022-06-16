@@ -18,6 +18,11 @@ const getWords = (uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getWordsByLanguage = (language) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/words.json?orderBy="language"&equalTo="${language}"`).then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 const createVocab = (wordObject, uid) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/words.json`, wordObject).then((response) => {
     const payload = { firebaseKey: response.data.name };
@@ -49,5 +54,5 @@ const updateWord = (wordObject) => new Promise((resolve, reject) => {
 });
 
 export {
-  getWords, createVocab, updateWord, getSingleWord, deleteWord
+  getWords, createVocab, updateWord, getSingleWord, deleteWord, getWordsByLanguage
 };
