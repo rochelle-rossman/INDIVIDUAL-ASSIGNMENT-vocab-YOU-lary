@@ -1,7 +1,7 @@
 import renderToDOM from '../helpers/renderToDom';
 import logo from './images/logo.png';
 
-const navBar = () => {
+const navBar = (user) => {
   const domString = ` <nav class="navbar navbar-expand-lg bg-dark">
       <div class="container-fluid">
       <img src=${logo} id="logo">
@@ -47,6 +47,7 @@ const navBar = () => {
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
           </form>
           <div id="logout-button"></div>
+          <img id="userIcon" class="userIcon" src="${user.photoURL}"></img>
         </div>
       </div>
     </nav>`;

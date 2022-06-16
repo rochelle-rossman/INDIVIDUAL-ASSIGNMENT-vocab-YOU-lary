@@ -12,7 +12,7 @@ const startApp = (user) => {
   domBuilder();
   domEvents(user.uid);
   formEvents(user.uid);
-  navBar();
+  navBar(user);
   navEvents(user.uid);
   logoutButton();
   filterButtons(user.uid);

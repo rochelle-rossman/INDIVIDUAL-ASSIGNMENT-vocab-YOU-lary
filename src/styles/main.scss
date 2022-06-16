@@ -14,7 +14,6 @@ body {
   flex-flow: row wrap;
   margin: auto;
   justify-content: center;
-  color: black;
 }
 
 #logo {
@@ -22,7 +21,10 @@ body {
   height: 75px;
 }
 
-#filter-buttons {
+#userIcon {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   margin: 5px;
 }
 
@@ -39,4 +41,8 @@ form {
   background-color: white;
   color: black;
   margin: 5px;
+}
+
+#navigation {
+  color: white !important;
 }
