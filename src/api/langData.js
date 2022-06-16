@@ -27,4 +27,13 @@ const createLanguage = (langObj, uid) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getLanguages, createLanguage };
+const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+  axios
+    .get(
+      `${dbUrl}/languages.json?orderBy="firebaseKey"&equalTo="${firebaseKey}"`
+    )
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
+export { getLanguages, createLanguage, getSingleLanguage };

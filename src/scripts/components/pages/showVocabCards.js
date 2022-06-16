@@ -9,14 +9,6 @@ const emptyVocab = () => {
 const showVocabCards = (array) => {
   clearDom();
 
-  // const filterBtnString = `<button type="button" class="btn btn-outline-light" id="html">HTML</button>
-  // <button type="button" class="btn btn-outline-light" id="css">CSS</button>
-  //   <button type="button" class="btn btn-outline-light" id="javascript">JavaScript</button>
-  //   <button type="button" class="btn btn-outline-light"id="python">Python</button>
-  //   <button type="button" class="btn btn-outline-light"id="all">All</button>`;
-
-  // renderToDOM('#filter-buttons', filterBtnString);
-
   if (array.length) {
     let domString = '';
     array.forEach((word) => {
